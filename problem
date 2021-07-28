@@ -52,6 +52,18 @@ You need to write a loop statement within the function that loops n times. Each 
 Finally, return the padded string.
 */
 
-function padIt(str,n){
-  //coding here
+const padIt = (str,n) => {
+  let left = true;
+  let remaining = 0;
+  do {
+    if(left === true) {
+      str = '*' + str;
+    } else {
+      str = str + '*';
+    }
+    remaining++;
+    left = !left;
+  } while (remaining < n);
+  
+  return str
 }
